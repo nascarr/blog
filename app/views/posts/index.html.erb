@@ -17,7 +17,7 @@
     <td><%= post.content %></td>
     <td><%= link_to 'Show', post %></td>
     <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
@@ -30,17 +30,17 @@
 
 <table>
  <tr>
-      <td> <b>Commenter:</b> </td>
-      <td> <b>Comment:</b>   </td>
-      <td> <b> Post </b> </td>
+      <th>  </th>
+      <th>  </th>
+      <th>  </th>
  </tr>
  <% @posts.each do |post| %>
     <% post.comments.each do |comment| %>
 
     <tr>
-      <td> <%= comment.commenter %> </td>
+      <td> <b><%= comment.commenter %> </b></td>
       <td> <%= comment.body %> </td>
-      <td> <%= link_to 'Show', post %> </td>
+      <td> <%= link_to 'Show post', post %> </td>
     </tr>
   
     <% end %>
