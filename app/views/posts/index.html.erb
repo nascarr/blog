@@ -10,14 +10,16 @@
     <th></th>
   </tr>
 
-<% @posts.each do |post| %>
-  <tr>
+
+ <% Post.order('created_at desc').each do |post| %>
+ <tr>
     <td><%= post.name %></td>
     <td><%= post.title %></td>
     <td><%= post.content %></td>
     <td><%= link_to 'Show', post %></td>
   </tr>
-<% end %>
+ <% end %> 
+
 </table>
 
 <br />
@@ -32,16 +34,13 @@
       <th>  </th>
       <th>  </th>
  </tr>
- <% @posts.each do |post| %>
-    <% post.comments.each do |comment| %>
-
+ <% Comment.order('created_at desc').limit(5).each do |comment| %>
     <tr>
       <td> <b><%= comment.commenter %> </b></td>
       <td> <%= comment.body %> </td>
-      <td> <%= link_to 'Show post', post %> </td>
+      <td> <%= link_to 'Show post', comment.post %> </td>
     </tr>
   
-    <% end %>
   <% end %>
 </table>
 
