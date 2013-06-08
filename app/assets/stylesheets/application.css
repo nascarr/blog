@@ -17,3 +17,14 @@ td, tr {
 	padding-bottom: 3px;
 	padding-top: 3px;
 }
+
+
+
+a:link {
+    text-decoration: none; 
+} 
+
+a:hover { 
+   text-decoration: underline; 
+
+} 
