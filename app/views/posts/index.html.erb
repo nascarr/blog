@@ -1,14 +1,13 @@
-<h1>Posts</h1>
-<%= link_to 'New Post', new_post_path %>
 
-<table cellpadding = "5" >
+<%= stylesheet_link_tag "index" %>
+<h1>Posts</h1>
+<u> <%= link_to 'New Post', new_post_path %> </u>
+
+<table>
   <tr>
     <th>Name</th>
     <th>Title</th>
     <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 
@@ -16,8 +15,7 @@
  <tr>
     <td><%= post.name %></td>
     <td><%= post.title %></td>
-    <td><%= post.content %></td>
-    <td><%= link_to 'Show', post %></td>
+    <td><%= link_to post.content.split(//).first(100).join, post %></td>
   </tr>
  <% end %> 
 
@@ -29,7 +27,7 @@
 
 <h1>Comments</h1>
 
-<table cellpadding = "5">
+<table>
  <tr>
       <th>  </th>
       <th>  </th>
@@ -38,8 +36,7 @@
  <% Comment.order('created_at desc').limit(10).each do |comment| %>
     <tr>
       <td> <b><%= comment.commenter %> </b></td>
-      <td> <%= comment.body %> </td>
-      <td> <%= link_to 'Show post', comment.post %> </td>
+      <td> <%= link_to comment.body.split(//).first(100).join, comment.post %> </td>
     </tr>
   
   <% end %>

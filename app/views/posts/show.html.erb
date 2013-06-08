@@ -1,4 +1,10 @@
-<h2>Post</h2>
+<u> <%= link_to 'Show all posts', posts_path %> </u>
+<table>
+<td> <h2>Post</h2></td>
+<td> <u> <%= link_to 'Edit', edit_post_path(@post) %> </u></td>
+</table>
+
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -23,5 +29,5 @@
 <h2>Add a comment:</h2>
 <%= render "comments/form" %>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+
+
