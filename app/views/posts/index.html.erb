@@ -27,7 +27,7 @@
 
  <% Comment.order('created_at desc').limit(10).each do |comment| %>
     <tr>
-      <td class = "small"> <i><%= comment.commenter %>, <%= time_created_at(comment) %> </i></td>
+      <td > <i class = "small"><%= comment.commenter %>, <%= time_created_at(comment) %> </i></td>
       <td > <%= link_to comment.body.split(//).first(100).join, comment.post %> </td>
     </tr>
   
