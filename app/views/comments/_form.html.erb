@@ -1,23 +1,37 @@
 <%= form_for([@post, @post.comments.build]) do |f| %>
+
+  <% if @comment && @comment.errors.any? %>
+  
+    <div id="error_explanation">
+      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+      <ul>
+      <% @comment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <table>
 
     <td>   <div class="field">
-    <%= f.label :commenter %><br />
+    <%= f.label "Автор" %><br />
     <%= f.text_field :commenter %>
-  </div>
+    </div>
     </td>
 
     <td>   
       <div class="actions">
-      <%= f.submit %>
+      <%= f.submit "Сохранить" %>
       </div>
     </td>
 
-</table>
+  </table>
 
   <div class="field">
-    <%= f.label :body %><br />
-    <%= f.text_area :body %>
+    <%= f.label "Комментарий" %><br />
+    <%= f.text_area :body, :size => "100x3" %>
   </div>
 
 <% end %>
