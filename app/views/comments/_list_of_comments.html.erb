@@ -5,8 +5,8 @@
     <tr>
       <td class = "small"> <i><%= comment.commenter %>, <%= time_created_at(comment) %> </i> </td>
       <td> <%= comment.body %> </td>
-       <td class = "small">
-       <u > <%= link_to 'Удалить', [comment.post, comment],
+       <td >
+       <u class = "small"> <%= link_to 'Удалить', [comment.post, comment],
          :confirm => 'Вы уверены?',
          :method => :delete %> 
        </u>

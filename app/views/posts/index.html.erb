@@ -11,7 +11,7 @@
 
  <% @posts.each do |post| %>
  <tr>
-    <td class = "small"> <i> <%= post.name %>, <%= time_created_at( post ) %> </i> </td>
+    <td > <i class = "small"> <%= post.name %>, <%= time_created_at( post ) %> </i> </td>
     <td><%= post.title %></td>
     <td > <%= link_to post.content.split(//).first(100).join, post %> </td>
   </tr>
