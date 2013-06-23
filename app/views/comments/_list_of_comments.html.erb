@@ -1,9 +1,10 @@
-<%# post = Post.find(params[:post_id]) %>
+
+<%# cooments are sorted by time of creation %>
 <table >
 
  <% @post.comments.order('created_at desc').each do |comment| %>
     <tr>
-      <td class = "small"> <i><%= comment.commenter %>, <%= time_created_at(comment) %> </i> </td>
+      <td class = "small"> <%= comment.commenter %>, <%= time_created_at(comment) %>  </td>
       <td> <%= comment.body %> </td>
        <td >
        <u class = "small"> <%= link_to 'Удалить', [comment.post, comment],
@@ -12,6 +13,6 @@
        </u>
        </td>
     </tr>
-  
-  <% end %>
+<% end %>
+
 </table>

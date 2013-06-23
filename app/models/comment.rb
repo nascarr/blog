@@ -1,7 +1,7 @@
 class Comment < ActiveRecord::Base
 
   minimum_commenter_length = 3
-  maximum_commenter_length = 30
+  maximum_commenter_length = 12
 
   minimum_body_length = 3
   maximum_body_length = 500
@@ -9,7 +9,7 @@ class Comment < ActiveRecord::Base
   belongs_to :post
   attr_accessible :body, :commenter
 
-  validates :commenter, :presence => true,
+  validates :commenter, :presence => true, 
             :length => { :within => minimum_commenter_length..maximum_commenter_length}
   
 

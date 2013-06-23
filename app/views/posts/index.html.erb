@@ -1,37 +1,30 @@
 
-<%#= stylesheet_link_tag "index" %>
-<h1 style="font-size: 1.8em;">Сообщения</h1>
+<h1 style="margin-bottom:1.5em;">Блог комнаты №219</h1>
+<h2 style=" margin-bottom:0.7em;">Сообщения</h2>
 <p style="margin-bottom:0.5em;"> <u> <%= link_to 'Новое сообщение', new_post_path %> </u> </p>
-<table >
-  <tr>
-    <th> </th>
-    <th class = "header">Заголовок</th>
-    <th class = "header">Содержание</th>
-  </tr>
 
+<%#= posts are sorted by time of creation%>
+<table class="posts">
  <% @posts.each do |post| %>
- <tr>
-    <td > <i class = "small"> <%= post.name %>, <%= time_created_at( post ) %> </i> </td>
-    <td><%= post.title %></td>
-    <td > <%= link_to post.content.split(//).first(100).join, post %> </td>
+  <tr>
+    <td class = "name_date small"> <%= post.name %>, <%= time_created_at( post ) %>  </td>
+    <td class="title"><%= post.title %></td>
+    <td > <%= link_to post.content.split(//).first(90).join, post %> </td>
   </tr>
  <% end %> 
-
 </table>
+
 <%= will_paginate @posts, :renderer => WillPaginate::ActionView::LinkRenderer%>
 
-<br>
-
-<h2 style="font-size: 1.5em;">Свежие комментарии</h2>
-<table >
-
+<h2 style=" margin-top:1.5em; margin-bottom:0.7em;">Свежие комментарии</h2>
+<%#= last 10 comments are sorted by time of creation%>
+<table class="comments" >
  <% Comment.order('created_at desc').limit(10).each do |comment| %>
     <tr>
-      <td > <i class = "small"><%= comment.commenter %>, <%= time_created_at(comment) %> </i></td>
-      <td > <%= link_to comment.body.split(//).first(100).join, comment.post %> </td>
+
+      <td class = "name_date  small"> <%= comment.commenter %>, <%= time_created_at(comment) %> </td>
+      <td > <%= link_to comment.body.split(//).first(90).join, comment.post %> </td>
     </tr>
-  
-  <% end %>
+ <% end %>
 </table>
 
-<br />

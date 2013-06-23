@@ -2,7 +2,7 @@ class Post < ActiveRecord::Base
   attr_accessible :content, :name, :title
 
   minimum_name_length = 3
-  maximum_name_length = 20
+  maximum_name_length = 12
 
   minimum_title_length = 3
   maximum_title_length = 30

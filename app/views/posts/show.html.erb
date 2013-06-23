@@ -1,25 +1,23 @@
-<u> <%= link_to 'Показать все сообщения', posts_path %> </u>
-<br>
-<table >
-<td style="font-size: 1.5em;
-    padding-right: 0.4em;
-	padding-left: 0em;
-	padding-bottom: 0em;
-	padding-top: 0.8em;" ><h1> <%= @post.title %> </h1></td>
-<td style = "padding-bottom: 0em;
-	padding-top: 0.8em;"> <u class = "small"> <%= link_to 'Редактировать', edit_post_path(@post) %> </u></td>
-</table>
+<h1 style="margin-bottom:0.5em;">Блог комнаты №219</h1>
+
+<p style="margin-bottom:3em;"> <u> <%= link_to 'Показать все сообщения', posts_path %> </u> </p>
+
+<div style="float:left; margin-right:1em;">
+<h2 > <%= @post.title %> </h2>
+</div>
+
+<p style="margin-left:2em;"> <u class = "small"> <%= link_to 'Редактировать', edit_post_path(@post) %> </u> </p>
 
 <p id="notice"><%= notice %></p>
-<p class = "small"> <i> <%= @post.name %>, <%= time_created_at(@post) %> </i> </p>
+<p class = "small">  <%= @post.name %>, <%= time_created_at(@post) %>  </p>
+
+<p style="margin-bottom:0em; "> <%= simple_format @post.content %> </p>
 
 
-<p> <%= @post.content %> </p>
-
-<br>
-<h2 style="font-size: 1.2em;">Комментарии</h2>
+<h3 style=" margin-bottom:0.5em; margin-top: 2.5em; ">Комментарии</h2>
 <%= render "comments/list_of_comments" %>
 
 <br>
-<h2 style="font-size: 1.2em;" >Добавить комментарий:</h2>
+<h3 style=" margin-bottom:0.5em; margin-top:1em;" >Добавить комментарий</h2>
 <%= render "comments/form" %>
+
