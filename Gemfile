@@ -22,9 +22,16 @@ end
 
 gem 'jquery-rails'
 
+#gems for splitting information into pages;
+
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.9'
 
+#gems for uploading photos by users; aws-sdk for saving photos at amazon cloud services
+gem 'paperclip', '3.0.4'
+gem 'aws-sdk',   '~> 1.8.3.1'
+
+gem 'cocaine', '0.3.2'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

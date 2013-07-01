@@ -13,7 +13,7 @@
 
 <p style="margin-bottom:0em; "> <%= simple_format @post.content %> </p>
 
-
+<%= image_tag @post.photo.url(:medium) %>
 <h3 style=" margin-bottom:0.5em; margin-top: 2.5em; ">Комментарии</h2>
 <%= render "comments/list_of_comments" %>
 

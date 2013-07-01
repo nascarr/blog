@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :content, :name, :title
+  attr_accessible :content, :name, :title, :photo
 
   minimum_name_length = 3
   maximum_name_length = 12
@@ -24,4 +24,12 @@ class Post < ActiveRecord::Base
  
 
   has_many :comments, :dependent => :destroy
+
+  has_attached_file :photo, 
+                    :styles => {:medium => "800x600>"},
+                    :storage => :s3,
+                    :s3_credentials => Rails.root.join('config/s3.yml'),
+                    :path => ":attachment/:id/:style.:extension",
+                    :bucket => 'blog219photos'
+
 end
