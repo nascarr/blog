@@ -37,12 +37,9 @@ Blog219::Application.configure do
 
   config.paperclip_defaults = {
     :storage => :s3,
-    :s3_credentials => {
-      :bucket => ENV['AWS_BUCKET'],
-      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
-    }
+    :s3_credentials => Rails.root.join('config/s3.yml'),
+    :bucket => 'blog219photos',
+    :path => "development/:attachment/:id/:style.:extension",
   }
-  
   Paperclip.options[:command_path] = "C:/IMagick6"
 end

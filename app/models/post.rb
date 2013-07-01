@@ -26,10 +26,6 @@ class Post < ActiveRecord::Base
   has_many :comments, :dependent => :destroy
 
   has_attached_file :photo, 
-                    :styles => {:medium => "800x600>"},
-                    :storage => :s3,
-                    :s3_credentials => Rails.root.join('config/s3.yml'),
-                    :path => ":attachment/:id/:style.:extension",
-                    :bucket => 'blog219photos'
+                    :styles => {:medium => "800x600>"}
 
 end
