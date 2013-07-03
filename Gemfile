@@ -28,10 +28,10 @@ gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.9'
 
 #gems for uploading photos by users; aws-sdk for saving photos at amazon cloud services
-gem 'paperclip', '3.0.4'
+gem 'paperclip', '3.4.2'
 gem 'aws-sdk',   '~> 1.8.3.1'
 
-gem 'cocaine', '0.3.2'
+gem 'cocaine', '0.5.0'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
