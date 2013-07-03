@@ -1,4 +1,5 @@
 class AddPhotoToPosts < ActiveRecord::Migration
+	
   def self.up
     add_attachment :posts, :photo
   end
@@ -6,4 +7,5 @@ class AddPhotoToPosts < ActiveRecord::Migration
   def self.down
     remove_attachment :posts, :photo
   end
+
 end
