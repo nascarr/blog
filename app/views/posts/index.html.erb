@@ -16,7 +16,7 @@
   <tr>
     <td class = "name_date small_font"> <%= post.name %>, <%= time_created_at( post ) %>  </td>
     <td class="message_title"><%= post.title %></td>
-    <td > <%= link_to post.content.split(//).first(77).join, post %> </td>
+    <td > <%= link_to post.content.split(//).first(71).join, post %> </td>
   </tr>
  <% end %> 
 </table>
@@ -31,7 +31,7 @@
  <% Comment.order('created_at desc').limit(10).each do |comment| %>
     <tr>
       <td class = "name_date"> <%= comment.commenter %>, <%= time_created_at(comment) %> </td>
-      <td > <%= link_to comment.body.split(//).first(109).join, comment.post %> </td>
+      <td > <%= link_to comment.body.split(//).first(108).join, comment.post %> </td>
     </tr>
  <% end %>
 </table>
