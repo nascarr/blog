@@ -1,7 +1,9 @@
-<p style="marhin-bottom:0px;"> <u> <%= link_to 'Назад', posts_path %> </u></p>
-<h1 style=" margin-bottom:1em">Новое сообщение</h1>
+<div class="head">
+<div class="action_link">
+<%= link_to 'Назад', posts_path %> 
+</div>
+<h1> Новое сообщение </h1>
+</div>
 
 <%= render 'form' %>
-
-
 

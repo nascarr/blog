@@ -41,5 +41,6 @@ Blog219::Application.configure do
     :bucket => 'blog219photos',
     :path => "development/:attachment/:id/:style.:extension",
   }
+  
   Paperclip.options[:command_path] = "C:/IMagick6"
 end

@@ -1,23 +1,36 @@
+<div class="head">
 <h1 style="margin-bottom:0.5em;">Блог комнаты №219</h1>
-
-<p style="margin-bottom:3em;"> <u> <%= link_to 'Показать все сообщения', posts_path %> </u> </p>
-
-<div style="float:left; margin-right:1em;">
-<h2 > <%= @post.title %> </h2>
+<div class="action_link">
+<%= link_to 'Показать все сообщения', posts_path %> 
 </div>
 
-<p style="margin-left:2em;"> <u class = "small"> <%= link_to 'Редактировать', edit_post_path(@post) %> </u> </p>
+</div>
+
+<div class="post_show_title">
+<h2> <%= @post.title %> </h2>
+</div>
+
+<div class="action_link">
+ <%= link_to 'Редактировать', edit_post_path(@post) %> 
+</div>
 
 <p id="notice"><%= notice %></p>
-<p class = "small">  <%= @post.name %>, <%= time_created_at(@post) %>  </p>
+<div class="post_show_name">
+<p>  <%= @post.name %>, <%= time_created_at(@post) %>  </p>
+</div>
+<div class = "post_show_content">
+<p> <%= simple_format @post.content %> </p>
+</div>
+<div><%= image_tag @post.photo.url(:medium) %> </div>
 
-<p style="margin-bottom:0em; "> <%= simple_format @post.content %> </p>
-
-<%= image_tag @post.photo.url(:medium) %>
-<h3 style=" margin-bottom:0.5em; margin-top: 2.5em; ">Комментарии</h2>
+<div class="subtitle">
+<h3 style=" margin-bottom:0.5em; margin-top: 2.5em; ">Комментарии</h3>
+</div>
 <%= render "comments/list_of_comments" %>
-
-<br>
-<h3 style=" margin-bottom:0.5em; margin-top:1em;" >Добавить комментарий</h2>
+<div class="subtitle">
+<h3>Добавить комментарий</h3>
+</div>
 <%= render "comments/form" %>
+
+
 
