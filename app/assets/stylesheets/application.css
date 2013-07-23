@@ -61,7 +61,7 @@ td.name_date{
 }
 
 td.message_title{
-  width:18%;
+  width:25%;
 }
 
 
@@ -117,7 +117,7 @@ a:hover {
   width:80%;
   word-wrap:break-word;
 }
-.comments table td{
+.comments td{
   vertical-align: top;
   text-align: left;
   padding-bottom: 1%;

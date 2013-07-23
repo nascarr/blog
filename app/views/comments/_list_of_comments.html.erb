@@ -1,7 +1,7 @@
 
 <%# cooments are sorted by time of creation %>
-<div class="comments">
-<table>
+<div >
+<table class="comments">
  <% @post.comments.order('created_at desc').each do |comment| %>
     <tr>
       <td class = "name_date"> <div> <%= comment.commenter %>, <%= time_created_at(comment) %> </div> </td>
