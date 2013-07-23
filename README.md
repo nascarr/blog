@@ -1,6 +1,5 @@
 <h1> The app</h1>
-<p>This is a simple blog. </p>
-<p>http://blog219.herokuapp.com </p>
+<p>This is a simple blog. http://blog219.herokuapp.com </p>
 <h2>Technologies that are used.</h2>
 <p>I develop the app by following tutorials and reading Stackoverflow. Such technologies as PostgreSQL, RoR, HTML and CSS are used.</p>
 <p>Additional gems (except defaults): </p>
