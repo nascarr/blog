@@ -9,17 +9,16 @@ module ApplicationHelper
  	 t = message.created_at.in_time_zone("Moscow")
 
  	 if t > DateTime.now.beginning_of_day
- 	 	t.strftime("%H:%M")
+ 	 	Russian::strftime(t, "%H:%M")
  	 else
  	 	if t > DateTime.now.beginning_of_year
- 	 	t.strftime("%d %b")
+ 	 	Russian::strftime(t, "%d %b")
  	    else 
- 	    t.strftime("%d %b %Y")
+ 	    Rusiian::strftime(t, "%d %b %Y")
  	    end
  	 end
  	 
  end
-
 
 
 end

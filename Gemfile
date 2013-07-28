@@ -32,6 +32,11 @@ gem 'paperclip', '3.4.2'
 gem 'aws-sdk',   '~> 1.8.3.1'
 
 gem 'cocaine', '0.5.0'
+
+#internationalisation API
+gem 'rails-i18n', '0.6.1'
+gem 'russian', '~> 0.6.0'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

@@ -14,14 +14,13 @@
  <%= link_to 'Редактировать', edit_post_path(@post) %> 
 </div>
 
-<p id="notice"><%= notice %></p>
 <div class="post_show_name">
 <p>  <%= @post.name %>, <%= time_created_at(@post) %>  </p>
 </div>
 <div class = "post_show_content">
 <p> <%= simple_format @post.content %> </p>
 </div>
-<div><%= image_tag @post.photo.url(:medium) %> </div>
+<div><%= photo(@post) %> </div>
 
 <div class="subtitle">
 <h3 style=" margin-bottom:0.5em; margin-top: 2.5em; ">Комментарии</h3>

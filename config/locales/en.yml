@@ -2,4 +2,18 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      post:
+        name: "поле Автор"
+        title: "Заголовок"
+        content: "Содержание"
+        photo: "Фото"
+    errors:
+      models:
+        post:
+          attributes:
+            name: "поле Автор"
+            title: "Заголовок"
+            content: "Содержание"
+            
